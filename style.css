@@ -1,0 +1,314 @@
+/* importing roboto and sofia fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Sofia&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    user-select: none;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    -webkit-user-drag: none;
+    /* overflow: hidden; */
+    /* font-family: 'Sofia', cursive; */
+}
+:root{
+    --mpink: #d37fc5;
+    --bgcolor: #160a12;
+}
+body{
+    background-color: var(--bgcolor);
+    color: var(--mpink);
+}
+/* main logo from top left */
+#main-logo{
+    font-weight: 900;
+    position: fixed;
+    left: -100vw;
+    color: white;
+    text-shadow: 0px 0px 10px var(--mpink), 1px 0px 1px var(--mpink);
+    padding: 0.4rem;
+    transition: 1s ease-in-out;
+    font-size: 1.4rem;
+}
+#main-logo strong{
+    font-variant: small-caps;
+    margin: 0 0 0 4px;
+    border-left: 1px solid var(--mpink);
+    padding: 0 0 0 2px;
+}
+
+/* headers starts here  */
+header{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+/* logo designing in header center */
+#outer-circle-container{
+    position: relative;
+    width: 4em;
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+/* for making moving border for logo  */
+#outer-circle{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(360deg, rgb(156, 1, 27),rgb(122, 14, 122));
+}
+.outer-circle{
+    top: 0;
+    right: 10%;
+    border-radius: 80%;
+    animation: outer-circle-animation 1.5s ease-in-out infinite;
+    transform-origin: center right;
+}
+#app-logo-container{
+    background-color: #0c070a;
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .2em;
+}
+#app-logo{
+    font-size: 2em;
+}
+/* loading container in header  */
+#loading-container{
+    margin: 1.4rem 0 0 0;
+    position: relative;
+    overflow: hidden;
+    transition: 1s ease-in-out;
+}
+/* moving background  */
+#loading-background{
+    position: absolute;
+    right: 10%;
+    z-index: -1;
+    transform-origin: center right;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(360deg, rgb(156, 1, 27),rgb(122, 14, 122));
+    animation: outer-circle-animation 1.5s ease-in-out infinite;
+}
+#loading{
+    background-color: #0c070a;
+    margin: .2rem;
+    padding: .5rem;
+}
+/* animation for loading logo & loading scale  */
+@keyframes outer-circle-animation{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/* launch button is here  */
+#launch-button{
+    position: absolute;
+    bottom: -10vh;
+    border: 5px solid currentColor;
+    border-color: #730060 rgb(94, 0, 16) rgb(94, 0, 16) #730060 ;
+    box-shadow: 0px 1px 10px rgb(107, 0, 128), 0px 2px 7px rgb(94, 0, 16);
+    border-radius: 5px;
+    padding: .4rem 1rem;
+    font-size: 1.2rem;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 1s ease-in-out;
+}
+#launch-button:active{
+    border: 2px;
+}
+
+/* informaition section  */
+#info-container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+/* username container  */
+#u-container{
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    font-size: 1.5rem;
+}
+#info-container #u-container label{
+    cursor: pointer;
+    display: block;
+    padding: .25rem 0;
+    width: 25%;
+}
+#info-container label sup, #sel-heading sup{
+    color: red;
+}
+#u-input{
+    display: block;
+    width: 70%;
+    padding: .5rem;
+    background: transparent;
+    border: 2px solid var(--mpink);
+    color: var(--mpink);
+    border-radius: 10px;
+}
+#info-container input:focus{
+    box-shadow: 0px 0px 7px #ff00d4;
+}
+#sel-heading{
+    width: 80vw;
+    padding: 0.4rem 1rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--mpink);
+    margin: 0 0 1rem 0;
+}
+#m-container{
+    display: flex;
+    width: 90vw;
+    justify-content: space-around;
+    align-items: center;
+}
+/* input for labeled images  */
+.sel-song:checked + .sel-label{
+    box-shadow: 1px 1px 10px var(--mpink), 0px 2px 10px var(--mpink);   
+    transform: scale(.9); 
+    /* border: 4px solid var(--mpink); */
+}
+/* images in label  */
+.sel-label{
+    display: block;
+    border-radius: 15px;
+    width: 12rem;
+    height: 12rem;
+    overflow: hidden;
+    position: relative;
+    padding: 0 !important;
+    border: none;
+}
+.sel-label img{
+    width: 100%;
+    height: 100%;
+}
+.sel-label > div{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    font-weight: 900;
+    font-size: 1.3rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0 0 .7rem 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.283), rgba(0, 0, 0, 0.628));
+}
+/* these are inputs of music selection  */
+.sel-song{
+    display: none;
+}
+/* save button */
+#save-button{
+    position: absolute;
+    bottom: 20px;
+    padding: .4rem 4rem;
+    border-radius: 10px;
+    font-size: 2rem;
+    font-weight: 900;
+    cursor: pointer;
+    border: 5px solid ;
+    border-color: #730060 rgb(94, 0, 16) rgb(94, 0, 16) #730060 ;
+    box-shadow: 0px 1px 10px rgb(107, 0, 128), 0px 2px 7px rgb(94, 0, 16);
+    transition: .5s ease-in-out;
+    background-color: var(--bgcolor);
+}
+#save-button:active{
+    border: 1px;
+}
+.translateY{
+    transform: translateY(100vh);
+}
+
+/* navbar code goes here  */
+#navbar{
+    position: fixed;
+    background-color: #000;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* all songs container  */
+#songs-container{
+    height: 100vh;
+    overflow: hidden auto;
+}
+
+/* media query for computers  */
+@media (max-width:700px){
+    /* username container  */
+    #u-container{
+        flex-wrap: wrap;
+    }
+    /* label in username container  */
+    #info-container #u-container label{
+        width: 100%;
+    }
+    /* user name input in u-container  */
+    #u-input{
+        width: 100%;
+    }
+    /* music selection container */
+    #m-container{
+        width: 95vw;
+        flex-wrap: wrap;
+    }
+    /* images container in music selection  */
+    .sel-label{
+        width: 45vw;
+        height: 45vw;
+        margin: .7rem 0;
+    }
+    /* images in selection label  */
+    .sel-label img{
+        width: 100%;
+    }
+    /* save button */
+    #save-button{
+        border: none;    
+        box-shadow: none;
+        background-color: var(--mpink);
+        color: var(--bgcolor);
+        width: 100vw;
+        border-radius: 0;
+        bottom: 0;
+        text-align: center;
+        transition: none;
+    }
+    #save-button:hover{
+        background-color: #730060;
+    }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <title>Music Player</title>
+</head>
+
+<!-- body starts here  -->
+
+<body>
+    <!-- logo goes here  -->
+    <div id="main-logo"><i class="far fa-music"></i><strong>Music</strong></div>
+
+    <!-- header starts here  -->
+    <header>
+        <!-- main container for app logo container  -->
+        <div id="outer-circle-container">
+            <!-- for gradient finish  -->
+            <div id="outer-circle" class="outer-circle"></div>
+            <!-- main app logo container  -->
+            <div id="app-logo-container">
+                <!-- app logo  -->
+                <i class="far fa-cloud-music" id="app-logo"></i>
+            </div>
+        </div>
+
+        <!-- display progress loading container  -->
+        <div id="loading-container">
+            <div id="loading-background"></div>
+            <div id="loading">Loading...</div>
+        </div>
+
+        <div id="launch-button">Launch <i class="far fa-play-circle"></i></div>
+    </header>
+
+    <!-- information gathering section  -->
+    <div id="info-container">
+        <div id="u-container">
+            <label for="username">Username:<sup>*</sup></label>
+            <input id="u-input" type="text" name="username" id="username" placeholder="Enter username..." />
+        </div>
+
+        <!-- heading for selection  -->
+        <div id="sel-heading">Make Selection <sup>*</sup></div>
+
+        <!-- music selection container  -->
+        <div id="m-container">
+
+            <!-- this is first input  -->
+            <input class="sel-song" type="checkbox" name="english" id="english" />
+            <label class="sel-label" for="english">
+                <img src="images/artist/jb.jpeg" alt="English" />
+                <div>English</div>
+            </label>
+
+            <!-- this is second input  -->
+            <input class="sel-song" type="checkbox" name="punjabi" id="punjabi" />
+            <label class="sel-label" for="punjabi">
+                <img src="images/artist/dd.jpeg" alt="Punjabi" />
+                <div>Punjabi</div>
+            </label>
+
+            <!-- this is third input  -->
+            <input class="sel-song" type="checkbox" name="hindi" id="hindi" />
+            <label class="sel-label" for="hindi">
+                <img src="images/artist/arijit.jpeg" alt="Hindi" />
+                <div>Hindi</div>
+            </label>
+
+        </div>
+        <div id="save-button" class="translateY">Save</div>
+    </div>
+
+    <!-- header goes here  -->
+    <nav id="navbar">
+        
+    </nav>
+
+    <div id="songs-container">
+        
+    </div>
+</body>
+<script src="main.js"></script>
+
+</html>
